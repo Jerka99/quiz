@@ -89,26 +89,26 @@ function App() {
           <h3>
             Category:{" "}
             {Object.keys(trivia_categories)[parseInt(url.category) - 8] ??
-              `Any Category: ${
+              `Any Category - ${
                 capitalize(task[question_index]?.category) ?? ""
               }`}
           </h3>
           <h3>
             Difficulty:{" "}
             {url.difficulty == ""
-              ? `Any Difficulty: ${
+              ? `Any Difficulty - ${
                   capitalize(task[question_index]?.difficulty) ?? ""
                 }`
               : capitalize(url.difficulty)}
           </h3>
-          <div id="question-number">
-            <h3>
+          {!loading &&<div id="question-number">
+             <h3>
               {question_index > parseInt(url.amount) - 1
                 ? question_index
                 : question_index + 1}{" "}
               / {task.length}
             </h3>
-          </div>
+          </div>}
         </div>
 
         {question_index == url.amount ? (
