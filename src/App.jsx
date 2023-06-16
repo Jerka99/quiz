@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [url, setUrl] = useState({
     link: "https://opentdb.com/api.php?",
-    amount: "",
+    amount: 1,
     difficulty: "",
     category: "",
   });
