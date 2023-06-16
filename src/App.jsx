@@ -14,13 +14,15 @@ function App() {
   const [loading, setLoading] = useState(false)
   const [url, setUrl] = useState({
     link: "https://opentdb.com/api.php?",
-    amount: 1,
+    amount: "",
     difficulty: "",
     category: "",
   });
   const urlExists = useRef("");
 
-  const fetch = () => {
+  const fetch = (e) => {
+    e.preventDefault();
+    console.log(e)
     setTask([]);
     setLoading(true)
     urlExists.current = `${url.link}&amount=${url.amount}&difficulty=${url.difficulty}&category=${url.category}`;
@@ -42,7 +44,7 @@ function App() {
     const name = e.currentTarget.name;
     let value = e.currentTarget.value;
     if (name == "amount") {
-      value > 50 ? (value = 50) : value < 1 ? (value = 1) : value;
+      value > 50 ? (value = 50) : value;
     }
     if (name == "category") {
       value = trivia_categories[value];

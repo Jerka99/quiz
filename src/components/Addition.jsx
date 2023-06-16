@@ -2,7 +2,7 @@ import { trivia_categories } from "../functions/category.js";
 
 const Addition = ({ modifyUrl, amount, fetch, category, difficulty }) => {
   return (
-    <>
+    <form onSubmit={fetch}>
       <div>
         <label htmlFor="difficulty">Difficulty</label>
         <select
@@ -40,10 +40,11 @@ const Addition = ({ modifyUrl, amount, fetch, category, difficulty }) => {
           max={50}
           value={amount}
           onChange={modifyUrl}
+          required
         />
       </div>
-      <button onClick={fetch}>Start</button>
-    </>
+      <button type="submit">Start</button>
+    </form>
   );
 };
 

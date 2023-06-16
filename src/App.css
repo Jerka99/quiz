@@ -110,9 +110,11 @@ button:hover {
   border: solid 2px;
 }
 
-#additions {
+#additions form {
+  display: flex;
   flex-direction: column;
   margin: 0 auto;
+  width: 100%;
   aspect-ratio: 1/1;
   gap: 50px;
   background: whitesmoke;
@@ -157,7 +159,7 @@ input {
   content: "";
   width: 70%;
   display: block;
-  background: linear-gradient(1deg, gainsboro 28%, black 72%);
+  background-image: conic-gradient(gainsboro 30%, black 100%);
   height: 70%;
   border-radius: 50%;
   animation: animate 1s linear infinite;
@@ -208,7 +210,7 @@ input {
     border-radius: 0;
     height: 100vh;
   }
-  #additions {
+  #additions form{
     border: none;
     background: inherit;
     padding: 8%;
